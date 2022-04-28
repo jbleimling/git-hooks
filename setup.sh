@@ -2,7 +2,7 @@
 
 # This script configures git hooks to be symlinked to ./hooks and creates a new conda environment based on the .yml file
 
-envname="dona-env"
+envname="env"
 
 install_hooks() {
   git config core.hooksPath \
