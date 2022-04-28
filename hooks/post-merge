@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# This script updates the local conda environment based on the .yml file
+
+envname="env"
+
+yml="$(dirname $(dirname $(realpath $0)) )/$envname.yml"
+conda env update --name $envname --file $yml --prune
+echo "Updated environment"

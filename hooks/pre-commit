@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# This script exports the environment dependencies to a .yml file and clears all *changed* notebook's outputs
+
+envname="env"
+
+changed_nbs=$(git diff --staged --name-only --diff-filter=ACM | grep ".ipynb")
+
+for changed_nb in $changed_nbs
+  do
+    jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace $changed_nb
+    git add $changed_nb
+  done
+
+conda env export --name $envname --file $envname.yml
+git add $envname.yml
+echo "Exported $envname.yml and added to commit"
