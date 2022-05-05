@@ -2,7 +2,9 @@
 This repository contains some git hook implementations. See the sections below which functions are available.
 
 ## Initialization
-To start using the hooks, simply run `./setup.sh`in the repository folder. The script creates a symbolic link for git to the `/hooks` folder so that they are not ignored.
+To start using the hooks, simply run `./setup.sh`in the repository folder. The script creates a symbolic link for git to the `/hooks` folder so that they are not ignored. 
+
+Alternatively you can run `git config core.hooksPath ./hooks` from the terminal to symlink the hook folder and `conda env create --name your_env --file your_env.yml` to create an environment based on the .yml file.
 
 ## Functionality
 ### conda environment
