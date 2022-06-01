@@ -2,7 +2,7 @@
 
 # This script exports the environment dependencies to a .yml file and clears all *changed* notebook's outputs
 
-envname="env"
+envname="your_env"
 
 changed_nbs=$(git diff --staged --name-only --diff-filter=ACM | grep ".ipynb")
 
